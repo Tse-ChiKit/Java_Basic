@@ -1,5 +1,6 @@
 package reflection;
 
+import org.junit.Assert;
 import org.junit.Test;
 import pojo.Car;
 
@@ -17,6 +18,8 @@ public class ReflectTest {
 
         System.out.println("context " + loader);
         System.out.println("getclass " + loader2);
+
+        Assert.assertEquals(loader.toString(),loader2.toString());
 
     }
 
