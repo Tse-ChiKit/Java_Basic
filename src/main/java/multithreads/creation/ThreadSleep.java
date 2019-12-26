@@ -1,7 +1,5 @@
 package multithreads.creation;
 
-import sun.jvm.hotspot.runtime.Threads;
-
 public class ThreadSleep {
 
     Thread t;
