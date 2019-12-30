@@ -6,7 +6,7 @@ public class VisibilityDemo {
 
     public static void main(String[] args) throws InterruptedException {
         TimeConsumingTask timeConsumingTask = new TimeConsumingTask();
-        Thread thread = new Thread(new TimeConsumingTask());
+        Thread thread = new Thread(timeConsumingTask);
         thread.start();
 
         // 指定的时间内任务没有执行结束的话，就将其取消
@@ -20,7 +20,6 @@ class TimeConsumingTask implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(" run tocncel: " + toCancel);
 
         while (!toCancel) {
             if (doExecute()) {
@@ -48,7 +47,6 @@ class TimeConsumingTask implements Runnable {
     public void cancel() {
         toCancel = true;
         System.out.println(this + " canceled.");
-        System.out.println("tocncel: " + this.toCancel);
 
     }
 }
